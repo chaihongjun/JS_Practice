@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>1.提取onclick进JS window.onload-Javasscript001-提取行间事件</title>
+    <style type="text/css">
+    button {
+        padding: 10px 16px;
+        font-size: 18px;
+        line-height: 1.3333333;
+        border-radius: 6px;
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #2e6da4;
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+
+    #div {
+        margin: 10px auto;
+        width: 200px;
+        height: 200px;
+        background: #9d9d9d;
+    }
+    /* 变化之后的样式*/
+
+    #div.red {
+        background: red;
+    }
+
+    #div.high {
+        height: 300px;
+    }
+
+    #div.narrow {
+        width: 100px;
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        var oBtn = document.getElementById('btn');
+        var oDiv = document.getElementById('div');
+        oBtn.onclick = function() {
+            oDiv.className = 'red high narrow';
+        };
+    };
+    </script>
+</head>
+
+<body>
+    <div>
+        <button type="button" id='btn'>修改样式</button>
+    </div>
+    <div id="div">
+    </div>
+</body>
+
+</html>
