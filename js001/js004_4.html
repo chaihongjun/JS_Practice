@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>4.if判断for循环-Javasscript001-循环</title>
+    <style>
+    button {
+        padding: 10px 16px;
+        font-size: 18px;
+        line-height: 1.3333333;
+        border-radius: 6px;
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #2e6da4;
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+
+    div {
+        border: 1px solid #ccc;
+        width: 200px;
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        var oBtn1 = document.getElementById('btnAll');
+        var oBtn2 = document.getElementById('btnRe');
+        var oBtn3 = document.getElementById('btnCan');
+        var inputs = document.getElementsByTagName('input');
+        oBtn1.onclick = function() { //点击全选中
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].checked = true;
+            }
+        };
+        oBtn2.onclick = function() { //点击反选
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].checked == true) {
+                    inputs[i].checked = false;
+                } else {
+                    inputs[i].checked = true;
+                }
+            }
+        };
+        oBtn3.onclick = function() { //点击全不选中
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].checked = false;
+            }
+        };
+    }
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" name="" value="">
+        <input type="checkbox" name="" value="">
+        <input type="checkbox" name="" value="">
+        <input type="checkbox" name="" value="">
+        <input type="checkbox" name="" value="">
+    </div>
+    <button type="button" id='btnAll'>全选</button>
+    <button type="button" id='btnRe'>反选</button>
+    <button type="button" id='btnCan'>不选</button>
+</body>
+
+</html>
