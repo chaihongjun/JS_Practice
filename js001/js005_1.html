@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>1.选项卡 鼠标经过变换-Javasscript001-this、索引值</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script type="text/javascript">
+    window.onload = function() {
+    var oDivs=document.getElementsByTagName('div');
+var oBtns=document.getElementsByTagName('button');
+
+    for(var i=1;i<oDivs.length;i++){   //初始化,后面的DIV先隐藏
+               oDivs[i].style.display = 'none';
+    }
+
+  
+for(var i=0;i<oBtns.length;i++){
+   oBtns[0].setAttribute('class','btn btn-info');    //初始化,第一个按钮先加上CSS
+  var index;
+    oBtns[i].onmouseover=function(){
+         for(var i=0;i<oBtns.length;i++)
+           {
+                   oBtns[i].setAttribute('class','btn btn-info');     
+           }
+    }
+}
+    }
+    </script>
+</head>
+<body>
+      <button type="button" >栏目一</button>
+      <button type="button" >栏目二</button>
+      <button type="button" >栏目三</button>
+      <button type="button" >栏目四</button>
+      <div class="alert-info" >栏目一的内容<br>栏目一的内容<br>栏目一的内容<br>栏目一的内容</div>
+      <div class="alert-info" >栏目二的内容<br>栏目二的内容<br>栏目二的内容<br>栏目二的内容</div>
+      <div class="alert-info" >栏目三的内容<br>栏目三的内容<br>栏目三的内容<br>栏目三的内容</div>
+      <div class="alert-info" >栏目四的内容<br>栏目四的内容<br>栏目四的内容<br>栏目四的内容</div>
+</body>
+</html>
