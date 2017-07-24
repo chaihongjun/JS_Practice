@@ -12,18 +12,42 @@
     <title>3.数组输出练习-Javasscript001-innerHTML、字符串拼接、数组</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
     <script type="text/javascript">
+   var shuzu=['这是第一句','这是第二句','这是第三句','这是第四句'];
     window.onload = function() {
             var btn1=document.getElementById('btn1');
             var btn2=document.getElementById('btn2');
             var btn3=document.getElementById('btn3');
             var btn4=document.getElementById('btn4');
             var btnall=document.getElementById('btnall');
+            var show=document.getElementById('show');
+            btn1.onclick=function(){
+             // alert(shuzu[0]);
+            show.innerHTML=shuzu[0];
+            };
+                 btn2.onclick=function(){
+              //alert(shuzu[1]);
+           show.innerHTML=shuzu[1];
+            };
+                 btn3.onclick=function(){
+              //alert(shuzu[2]);
+              show.innerHTML=shuzu[2];
+            };
+                 btn4.onclick=function(){
+             // alert(shuzu[3]);
+              show.innerHTML=shuzu[3];
+            };
+           btnall.onclick=function(){
+              //alert(shuzu);
+              for(var i=0;i<shuzu.length;i++){
+                  alert(shuzu[i]);
+              }
+               show.innerHTML=shuzu;
+              }
     }
     </script>
 </head>
 <body>
 <p class="text-center">已经知道数组内容：1.这是第一句2.这是第二句3.这是第三句4.这是第四句</p>
-
 <div class="text-center">
 <button type="button" class="btn btn-info" id='btn1'>提取1</button>
 <button type="button" class="btn btn-info" id='btn2'>提取2</button>
@@ -31,17 +55,8 @@
   <button type="button" class="btn btn-info" id='btn4'>提取4</button>
   <button type="button" class="btn btn-info" id='btnall'>全部弹出提取</button>
 </div>
-
-
 <div id=result>
   <p>提取后在这里显示:<span id=show></span></p>
 </div>
-
-
-
-
-
-
-
 </body>
 </html>
