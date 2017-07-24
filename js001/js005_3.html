@@ -10,7 +10,7 @@
     <!-- some meta tags, important for SEO"-->
     <meta name="description" content="put a short description in here" />
     <meta name="keywords" content="put your important keywords in here" />
-    <title>1.选项卡 鼠标经过变换-Javasscript001-this、索引值</title>
+    <title>2.选项卡 鼠标点击变换 while循环方法-Javasscript001-this、索引值</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
     <style type="text/css">
     div {
@@ -21,16 +21,32 @@
     window.onload = function() {
         var oDivs = document.getElementsByTagName('div');
         var oBtns = document.getElementsByTagName('button');
-        for (var i = 0; i < oBtns.length; i++) {
-            oBtns[i].index = i; //TAB 选项卡索引值
-            oBtns[i].onmouseover = function() { //鼠标移动到目标TAB上
-                for (var i = 0; i < oBtns.length; i++) { //首先把所有的TAB设置一个默认样式，并把所有的内容都隐藏
+        // for (var i = 0; i < oBtns.length; i++) {
+        //     oBtns[i].index = i; //TAB 选项卡索引值
+        //     oBtns[i].onclick = function() { //鼠标移动到目标TAB上
+        //         for (var i = 0; i < oBtns.length; i++) { //首先把所有的TAB设置一个默认样式，并把所有的内容都隐藏
+        //             oBtns[i].setAttribute('class', 'btn');
+        //             oDivs[i].style.display = 'none';
+        //         };
+        //         this.setAttribute('class', 'btn btn-info'); //然后将默认TAB设置高亮，以及内容显示出来
+        //         oDivs[this.index].style.display = 'block';
+        //     };
+        // }
+        // 
+        var i = 0;
+        while (i < oBtns.length) {
+            oBtns[i].index = i;
+            oBtns[i].onclick = function() {
+                var i = 0;
+                while (i < oBtns.length) {
                     oBtns[i].setAttribute('class', 'btn');
                     oDivs[i].style.display = 'none';
-                };
-                this.setAttribute('class', 'btn btn-info'); //然后将默认TAB设置高亮，以及内容显示出来
+                    i++;
+                }
+                this.setAttribute('class', 'btn btn-info');
                 oDivs[this.index].style.display = 'block';
-            };
+            }
+            i++;
         }
     }
     </script>
@@ -44,11 +60,13 @@
           div{displaynone:}   
          </style>           
          <div class="alert-info" style="display: block;">
-       2. 鼠标移动到需要高亮的TAB的时候，先将全部的TAB点灭，全部的内容隐藏：
-            for (var i = 0; i < oBtns.length; i++) {   
-                    oBtns[i].setAttribute('class', 'btn'); //只加载不高亮的CSS
-                    oDivs[i].style.display = 'none';    //全部内容不显示
-                };
+       2. 鼠标移动并点击到需要高亮的TAB的时候，先将全部的TAB点灭，全部的内容隐藏：
+                var i = 0;
+                while (i < oBtns.length) {
+                    oBtns[i].setAttribute('class', 'btn');
+                    oDivs[i].style.display = 'none';
+                    i++;
+                }
         3.再将需要高亮的TAB点亮，需要显示的对应的内容显示：
         this.setAttribute('class', 'btn btn-info');   
                 oDivs[this.index].style.display = 'block'; 

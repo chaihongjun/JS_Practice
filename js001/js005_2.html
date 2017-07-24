@@ -10,7 +10,7 @@
     <!-- some meta tags, important for SEO"-->
     <meta name="description" content="put a short description in here" />
     <meta name="keywords" content="put your important keywords in here" />
-    <title>1.选项卡 鼠标经过变换-Javasscript001-this、索引值</title>
+    <title>2.选项卡 鼠标点击变换 for 循环方法-Javasscript001-this、索引值</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
     <style type="text/css">
     div {
@@ -23,7 +23,7 @@
         var oBtns = document.getElementsByTagName('button');
         for (var i = 0; i < oBtns.length; i++) {
             oBtns[i].index = i; //TAB 选项卡索引值
-            oBtns[i].onmouseover = function() { //鼠标移动到目标TAB上
+            oBtns[i].onclick = function() { //鼠标移动到目标TAB上
                 for (var i = 0; i < oBtns.length; i++) { //首先把所有的TAB设置一个默认样式，并把所有的内容都隐藏
                     oBtns[i].setAttribute('class', 'btn');
                     oDivs[i].style.display = 'none';
