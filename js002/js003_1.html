@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>1.算术练习 -Javascript003-运算符
+    </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script type="text/javascript">
+    window.onload = function() {
+        var oBtns = document.getElementsByTagName('button');
+        var oInputs = document.getElementsByTagName('input');
+        //求和
+        oBtns[0].onclick = function() {
+            alert(parseFloat(oInputs[0].value) + parseFloat(oInputs[1].value))
+        };
+        //求差
+        oBtns[1].onclick = function() {
+            alert(parseFloat(oInputs[2].value) - parseFloat(oInputs[3].value))
+        };
+        //求积 
+        oBtns[2].onclick = function() {
+            alert(parseFloat(oInputs[4].value) * parseFloat(oInputs[5].value))
+        };
+        //求商 
+        oBtns[3].onclick = function() {
+            alert(parseFloat(oInputs[6].value) / parseFloat(oInputs[7].value))
+        };
+        //求摸 
+        oBtns[4].onclick = function() {
+            alert(parseFloat(oInputs[8].value) % parseFloat(oInputs[9].value))
+        };
+    }
+    </script>
+</head>
+
+<body>
+    <div>
+        <p>求和</p>
+        <p>
+            <input type="text" name=""> <span>加</span>
+            <input type="text" name="">
+            <button type="button" class="btn btn-info">求和</button>
+        </p>
+        <p>求差</p>
+        <p>
+            <input type="text" name=""> <span>减</span>
+            <input type="text" name="">
+            <button type="button" class="btn btn-info">求差</button>
+        </p>
+        <p>求积</p>
+        <p>
+            <input type="text" name=""> <span>乘</span>
+            <input type="text" name="">
+            <button type="button" class="btn btn-info">求积</button>
+        </p>
+        <p>求商</p>
+        <p>
+            <input type="text" name=""> <span>除</span>
+            <input type="text" name="">
+            <button type="button" class="btn btn-info">求商</button>
+        </p>
+        <p>求模</p>
+        <p>
+            <input type="text" name=""> <span>模</span>
+            <input type="text" name="">
+            <button type="button" class="btn btn-info">求模</button>
+        </p>
+    </div>
+</body>
+
+</html>

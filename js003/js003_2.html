@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>2.函数传参 arguments return-Javascript003-JAVAscript组成、变量的类型、数据类型转换
+    </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <style type="text/css" media="screen">
+
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        function sum() {
+            var count = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                count += arguments[i];
+            }
+            return count;
+        }
+        var btn = document.getElementsByTagName('button')[0];
+        btn.onclick = function() {
+            alert(sum(12, 13, 14));
+        };
+    }
+    </script>
+</head>
+
+<body>
+    <p>函数传参 arguments</p>
+    <p>已知传给参数内容：alert(sum(12,13,14))，做个arguments.length的循环，并且每循环一次把参数里的数依次相加，整个参数数组加一遍为止。最后再把这个结果通过return返回出来。</p>
+    <button type="button" class="btn btn-info">循环叠加计算</button>
+</body>
+
+</html>

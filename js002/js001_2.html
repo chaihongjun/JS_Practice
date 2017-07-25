@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>2.变量类型转换 显式类型转换/强制类型转换（明确写出parseFloat或paseInt告诉计算机必须转换。）-Javascript002-JAVAscript组成、变量的类型、数据类型转换</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script type="text/javascript">
+    window.onload = function() {
+        var input1 = document.getElementById('input1');
+        var input2 = document.getElementById('input2');
+        var input3 = document.getElementById('input3');
+        var input4 = document.getElementById('input4');
+        var input5 = document.getElementById('input5');
+        var input6 = document.getElementById('input6');
+        var input7 = document.getElementById('input7');
+        var input8 = document.getElementById('input8');
+        var input9 = document.getElementById('input9');
+        var sum1 = document.getElementById('sum1');
+        var sum2 = document.getElementById('sum2');
+        var sum3 = document.getElementById('sum3');
+        var sum4 = document.getElementById('sum4');
+        var checkNaN = document.getElementById('checkNaN');
+        sum1.onclick = function() {
+            alert(input1.value + input2.value);
+        };
+        sum2.onclick = function() {
+            // if((isNaN(input3.value)) || (isNaN(input4.value)) ){
+            //     alert("请输入纯数字");
+            // }
+            alert(parseInt(input3.value) + parseInt(input4.value));
+            checkNaN.onclick = function() {
+                if (isNaN(input5.value)) {
+                    alert(true);
+                } else {
+                    alert(false);
+                }
+            }
+        };
+        sum3.onclick = function() {
+            if ((isNaN(input6.value)) || (isNaN(input7.value))) {
+                alert("请输入纯数字");
+            } else {
+                alert(parseInt(input6.value) + parseInt(input7.value))
+            }
+        };
+        sum4.onclick = function() {
+            if ((isNaN(input8.value)) || (isNaN(input9.value))) {
+                alert("请输入纯数字");
+            } else {
+                alert(parseFloat(input8.value) + parseFloat(input9.value))
+            }
+        };
+    }
+    </script>
+</head>
+
+<body>
+    <div>
+        <p>字符串求和</p>
+        <input type="text" name="" id="input1" value=""><span>+</span>
+        <input type="text" name="" id="input2" value="">
+        <button type="button" class="btn btn-info" id="sum1">求和</button>
+    </div>
+    <div>
+        <p>将value的值进行parseInt，之后再相加，就是数字相加的结果了。 如果输入12+abc，结果会显示NaN，任何数和NaN相加结果都是NaN。NaN和NaN是不相等的。
+        </p>
+        <input type="text" name="" id="input3" value=""><span>+</span>
+        <input type="text" name="" id="input4" value="">
+        <button type="button" class="btn btn-info" id="sum2">求和</button>
+    </div>
+    <div>
+        <p>检测输入框的内容是不是NaN。true为真，false为假。</p>
+        <input type="text" name="" id="input5" value="">
+        <button type="button" class="btn btn-info" id="checkNaN">检测NaN</button>
+    </div>
+    <div>
+        <p>检测输入的内容是不是NaN，如果是，则给出提示。如果不是，就给出运算结果，仅支持数字整数相加。</p>
+        <input type="text" name="" id="input6" value="" placeholder="支持整数运算"><span>+</span>
+        <input type="text" name="" id="input7" value="" placeholder="支持整数运算">
+        <button type="button" class="btn btn-info" id="sum3">求和</button>
+    </div>
+    <div>
+        <p>检测输入的内容是不是NaN，如果是，则给出提示。如果不是，就给出运算结果，支持小数相加。</p>
+        <input type="text" name="" id="input8" value="" placeholder="支持小数运算"><span>+</span>
+        <input type="text" name="" id="input9" value="" placeholder="支持小数运算">
+        <button type="button" class="btn btn-info" id="sum4">求和</button>
+    </div>
+</body>
+
+</html>
