@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>1.创建元素-Javascript005-创建、插入和删除元素
+    </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script type="text/javascript">
+    window.onload = function() {
+        var btn = document.getElementsByTagName('button');
+        var ul = document.getElementsByTagName('ul');
+        btn[0].onclick = function() {
+            //创建li元素并添加到ul
+            var li = document.createElement('li');
+            ul[0].appendChild(li);
+            //  alert(ul.children.length);
+            for (var i = 0; i < ul[0].children.length; i++) {
+                li.innerHTML = '创建成功，这是第' + i + '个li';
+                if (i % 2 != 0) {
+                    li.setAttribute('class', 'list-group-item list-group-item-info');
+                } else {
+                    li.setAttribute('class', 'list-group-item');
+                }
+            }
+        };
+        btn[1].onclick = function() {
+            var input = document.getElementsByTagName('input')[0];
+            //创建li元素并添加到ul
+            var li = document.createElement('li');
+            ul[1].appendChild(li);
+            for (var i = 0; i < ul[1].children.length; i++) {
+                li.innerHTML = '创建成功，这是第' + i + '个li' + input.value;
+                if (i % 2 != 0) {
+                    li.setAttribute('class', 'list-group-item list-group-item-info');
+                } else {
+                    li.setAttribute('class', 'list-group-item');
+                }
+            }
+        };
+    }
+    </script>
+</head>
+
+<body>
+    <p>创建元素li</p>
+    <ul class="list-group">
+    </ul>
+    <p>
+        <button type="button" class="btn btn-info">创建li</button>
+    </p>
+    <p>
+        <ul class="list-group">
+        </ul>
+        <input type="text" name="" placeholder="可以自定义内容">
+        <button type="button" class="btn btn-info">创建li</button>
+    </p>
+</body>
+
+</html>

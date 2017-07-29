@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>3.浮动层-Javascript006-可视区尺寸、滚动距离
+    </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <style type="text/css">
+    .wrap {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        background: #c1c1c1;
+    }
+    .close {
+     color: #31b0d5;
+     background: #fff;
+     border: #2aabd2;
+    }
+    .open{
+        color: #fff;
+    background-color: #5bc0de;
+    border-color: #5bc0de;
+    }
+    .fudong {
+        border: 1px solid yellow;
+        background: yellow;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 100px;
+        width: 50px;
+        display: none;
+        /*  初始化 隐藏*/
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        var btn = document.getElementsByTagName('button')[0];
+        var fudong=document.getElementById('scrollTop');
+        btn.onclick = function() {
+            if (btn.innerHTML == '展现浮动层') {
+                btn.innerHTML = '关闭浮动层';
+                fudong.style.display='block';
+            }
+            else{
+                    btn.innerHTML = '展现浮动层';
+                fudong.style.display='none';
+            }
+        };
+
+        //窗口有滚动或者窗口尺寸改变
+                window.onscroll=window.onresize=function (){
+
+    
+    var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+
+    fudong.style.top=scrollTop+document.documentElement.clientHeight-fudong.offsetHeight+'px';     
+
+                };
+
+
+
+    }
+    </script>
+</head>
+<body>
+    <p>浮动层</p>
+    <p><code>window.onscroll & window.onresize</code></p>
+    <div class="container">
+        <p class="text-center">
+            <button type="button" class="btn btn-info">展现浮动层</button>
+        </p>
+        <div class="wrap">
+            <div class="fudong" id='scrollTop'>
+                这里是浮动层
+            </div>
+        </div>
+    </div>
+</body>
+</html>

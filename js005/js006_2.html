@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>2.表格应用：添加、删除-Javascript005-表格应用、提取、添加、删除
+    </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script type="text/javascript">
+    window.onload = function() {
+        var table = document.getElementsByTagName('table')[0];
+        var input = document.getElementsByTagName('input');
+        var btn = document.getElementsByTagName('button')[0];
+        var id=table.tBodies[0].rows.length;  //初始化ID
+        var row =table.tBodies[0].rows.length;   //初始化行数
+        //var a = document.getElementsByTagName('a');
+          /*  添加内容  */
+        btn.onclick = function() {
+              //单击添加之后ID序列加1
+              id=id+1;
+              //单击添加之后行数加1
+               row=row+1; 
+            //创建表结构  
+            //首先创建表格行 tr
+            var tr = document.createElement('tr');
+            table.tBodies[0].appendChild(tr);
+            //再添加单元格 4个td
+            for (var i = 0; i < 4; i++) {
+                var td = document.createElement('td');
+                table.tBodies[0].lastElementChild.appendChild(td);
+            }
+            //将表单内容填充到表格内
+            //填充ID
+           table.tBodies[0].getElementsByTagName('tr')[row - 1].getElementsByTagName('td')[0].innerHTML = id;
+            //填姓名到表格
+            table.tBodies[0].getElementsByTagName('tr')[row - 1].getElementsByTagName('td')[1].innerHTML = input[0].value;
+            //填年龄到表格
+            table.tBodies[0].getElementsByTagName('tr')[row - 1].getElementsByTagName('td')[2].innerHTML = input[1].value;
+            // 添加删除
+            table.tBodies[0].getElementsByTagName('tr')[row - 1].getElementsByTagName('td')[3].innerHTML = '<a href="javascript:;">删除</a>';
+        }
+              /* 删除功能  */  
+              var a = document.getElementsByTagName('a');         
+            for (var i = 0; i <row; i++) {
+                a[i].onclick = function() {
+                    table.tBodies[0].removeChild(this.parentNode.parentNode);
+                    //点击删除一行元素之后，行数减一
+                    row=row-1;
+                };
+            }
+    }
+    </script>
+</head>
+<body>
+    <p>表格应用：添加、删除</p>
+    <div class="container">
+        <label>姓名：
+            <input type="text" name="" value="" placeholder="必填">
+        </label>
+        <label>年龄：
+            <input type="text" name="" value="" placeholder="必填">
+        </label>
+        <button type="button" class="btn btn-info">添加</button>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>33</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>李四</td>
+                    <td>44</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>王五</td>
+                    <td>55</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>赵六</td>
+                    <td>66</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>homejoy</td>
+                    <td>33</td>
+                    <td><a href="javascript:;">删除</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

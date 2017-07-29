@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>1.DOM节点 子节点-Javascript005-DOM基础、子节点、父节点
+    </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script type="text/javascript">
+    window.onload = function() {
+        var ul = document.getElementsByTagName('ul');
+        var btn = document.getElementsByTagName('button');
+        btn[0].onclick = function() {
+            alert(ul[0].childNodes.length);
+        };
+        btn[1].onclick = function() {
+            alert(ul[0].children.length);
+        };
+        btn[2].onclick = function() {
+            for (var i = 0; i < ul[0].childNodes.length; i++) {
+                if (ul[0].childNodes[i].nodeType == 3) {
+                    alert('当前节点是文本节点：' + ul[0].childNodes[i].nodeValue);
+                } else {
+                    alert('当前节点是元素节点：' + ul[0].childNodes[i].outerHTML);
+                }
+            };
+        };
+        btn[3].onclick = function() {
+            for (var i = 0; i < ul[0].childNodes.length; i++) {
+                if (ul[0].childNodes[i].nodeType == 3) {
+                    alert('当前节点是文本节点：' + ul[0].childNodes[i].nodeValue);
+                } else {
+                    alert('当前节点是元素节点');
+                    ul[0].childNodes[i].className = 'list-group-item list-group-item-info';
+                }
+            };
+        };
+        btn[4].onclick = function() {
+            alert(ul[1].children.length);
+        };
+        btn[5].onclick = function() {
+            for (var i = 0; i < ul[1].children.length; i++) {
+                ul[1].children[i].className = 'list-group-item list-group-item-info';
+            }
+        };
+    }
+    </script>
+</head>
+
+<body>
+    <div>
+        <p>子节点 childNodes & nodeType</p>
+        <ul class="list-group">
+            <li class="list-group-item">子节点1</li>
+            <li class="list-group-item">子节点2</li>
+        </ul>
+        <p>
+            <button type="button" class="btn btn-info">子节点个数(包含空白节点)</button>
+            <button type="button" class="btn btn-info">元素子节点个数</button>
+        </p>
+        <p>实际有2个li，但给出的结果是5。是因为childNodes把空的文本节点也算进去了。children则会忽略空白的文本节点</p>
+        <button type="button" class="btn btn-info">判断节点类型</button>
+        <p>当nodeType等于3，说明是文本节点，如果是1，则是元素节点</p>
+        <button type="button" class="btn btn-info">操作子节点</button>
+        <p>判断子节点类型是否等于1，如果等于1则改class。</p>
+    </div>
+    <div>
+        <p>子节点children</p>
+        <ul class="list-group">
+            <li class="list-group-item">子节点1</li>
+            <li class="list-group-item">子节点2</li>
+        </ul>
+        <p>
+            <button type="button" class="btn btn-info">子节点个数（不含空白文本节点）</button>
+            <button type="button" class="btn btn-info">操作子节点</button>
+        </p>
+    </div>
+</body>
+
+</html>

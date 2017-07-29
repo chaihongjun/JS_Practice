@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>2.日期对象 Date-Javascript004-定时器、日期对象
+    </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <style type="text/css" media="screen">
+    .timer {
+        background-color: #000;
+        font-size: 50px;
+        line-height: 80px;
+        color: #fff;
+        text-align: center;
+    }
+    .timer img,
+    .timer span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        var oBtns = document.getElementsByTagName('button');
+        var oDay = new Date();
+        oBtns[0].onclick = function() {
+            alert('当前小时:' + oDay.getHours());
+        };
+        oBtns[1].onclick = function() {
+            alert('当前分钟:' + oDay.getMinutes());
+        };
+        oBtns[2].onclick = function() {
+            alert('当前秒数:' + oDay.getSeconds());
+        };
+        //在线时间
+        function showtime() {
+            var oDay = new Date();
+            //将当前时间连接成字符串比如15：30： 6变成 153006
+      var timestring = shuangshu(oDay.getHours()) + shuangshu(oDay.getMinutes()) + shuangshu(oDay.getSeconds()); 
+         console.log(timestring);
+            function shuangshu(n) { //判断小时 分钟 和秒数是否为单数
+                if (n < 10) { //如果是单数
+                    return '0' + n;              // e.g:
+                } else {
+                    return  n.toString();    //将变量字符串化   或 return  ''+n;                     
+                }
+            };
+            var imgs = document.getElementsByTagName('img');
+            for (var i = 0; i < timestring.length; i++) {
+                imgs[i].src = 'images/' + timestring[i] + '.png';
+            }
+        };
+        showtime();
+        setInterval(showtime, 1000);
+    }
+    </script>
+</head>
+<body>
+    <p>获取
+        <button type="button" class="btn btn-info">当前小时</button>
+        <button type="button" class="btn btn-info">当前分钟</button>
+        <button type="button" class="btn btn-info">当前秒数</button>
+    </p>
+    <p>在线时间</p>
+    <div class="timer">
+        <img src="images/0.png" alt="">
+        <img src="images/0.png" alt="">
+        <span>:</span>
+        <img src="images/0.png" alt="">
+        <img src="images/0.png" alt="">
+        <span>:</span>
+        <img src="images/0.png" alt="">
+        <img src="images/0.png" alt="">
+    </div>
+    <p></p>
+</body>
+</html>

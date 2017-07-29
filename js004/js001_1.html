@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>1.定时器-Javascript004-定时器、日期对象
+    </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <style type="text/css" media="screen">
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        var oBtns = document.getElementsByTagName('button');
+        oBtns[0].onclick = function() {
+            var n = 1;
+            function show() {
+                alert('这是第' + n + '次弹窗');
+                n++;
+            }
+            setInterval(show, 1000);
+        };
+        oBtns[1].onclick = function() {
+            var n = 1;
+            function show() {
+                alert('这是第' + n + '次弹窗');
+                n++;
+            }
+            setTimeout(show, 2000);
+        };
+   var timer;
+        oBtns[2].onclick = function() {
+            var n = 1;
+            function show() {
+                alert('这是第' + n + '次弹窗');
+                n++;
+            }
+             timer = setInterval(show, 1000);
+        };
+        oBtns[3].onclick = function() {
+            clearInterval(timer);
+        };
+    }
+    </script>
+</head>
+<body>
+    <p>定时器</p>
+    <p>setInterval 定时型</p>
+    <p>无终止执行 每隔一秒执行1次函数</p>
+    <p><code>setInterval(show, 1000)</code>
+        <button type="button" class="btn btn-info">开始弹出</button>
+    </p>
+    <p>setTimeout 延时型</p>
+    <p>两秒后执行一次弹出就结束</p>
+    <p><code>setTimeout(show, 2000)</code>
+        <button type="button" class="btn btn-info">开始弹出</button>
+    </p>
+    <p>定时器开关</p>
+    <p><code>setTimeout(show, 2000)</code>
+        <button type="button" class="btn btn-info">开始</button>
+        <button type="button" class="btn btn-info">关闭</button>
+    </p>
+</body>
+</html>

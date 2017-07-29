@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>4.CSS函数 非行间样式-Javascript003-JAVAscript组成、变量的类型、数据类型转换
+    </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <style type="text/css" media="screen">
+    </style>
+    <script type="text/javascript">
+    function Style(){ // 获取或者设置行内样式
+  if(arguments.length==2){
+                    //如果是两个参数 Style('div','width') 获取CSS值
+                    return arguments[0].style[arguments[1]];                               //object.style() 获取行内样式
+  }else{
+                  //如果是三个参数 Style('div','width','100px') 设置CSS值
+      return arguments[0].style[arguments[1]]=arguments[2];                //object.style[]=  设置行内样式         
+  }
+    };
+    window.onload = function() {
+        var oDiv=document.getElementsByTagName('div')[0];
+        var oBtn=document.getElementsByTagName('button');
+   oBtn[0].onclick=function(){ //获取行间CSS
+                oDiv.innerHTML='当前容器宽度:'+Style(oDiv,'width')+'<br>'+'当前容器高度:'+Style(oDiv,'height')+'<br>'+'当前容器背景色:'+Style(oDiv,'background-color')
+   };
+      oBtn[1].onclick=function(){  //设置行间CSS
+                oDiv.innerHTML='设置当前容器宽度:'+Style(oDiv,'width','100%')+'<br>'+'设置当前容器高度:'+Style(oDiv,'height','100px')+'<br>'+'设置当前容器背景色:'+Style(oDiv,'background-color','#8e8e8e')
+   };
+    }
+    </script>
+</head>
+<body>
+    <p>CSS函数 行间样式</p>
+    <p>函数可以根据参数不同匹配相应的功能。如果是两个参数，就是获取CSS样式。如果是三个参数，就是设置CSS样式。</p>
+    <button type="button" class="btn btn-info">获取行间样式</button>
+        <button type="button" class="btn btn-info">设置行间样式</button>
+        <p>需要设置成100%的宽度，100px的高度，背景颜色为黑色</p>
+        <div style="width: 50%;height: 200px;background-color: yellow;margin:0 auto;">
+        </div>
+</body>
+</html>

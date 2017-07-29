@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>2.插入元素 createElement & insertBefore-Javascript005-创建、插入和删除元素
+    </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script type="text/javascript">
+    window.onload = function() {
+        var btn = document.getElementsByTagName('button');
+        var ul = document.getElementsByTagName('ul');
+        var input = document.getElementsByTagName('input')[0];
+        btn[0].onclick = function() {
+            var li = document.createElement('li');
+
+            if (ul[0].children.length == 0) { //如果初始化的时候没有li,直接就添加
+                ul[0].appendChild(li);
+            } else { //如果初始化的时候有了li，找到第一个li子节点，在前面插入li      
+                ul[0].insertBefore(li, ul[0].children[0]);
+            }
+            
+            for (var i = 0; i < ul[0].children.length; i++) {
+                li.innerHTML = '创建成功,这是第' + i + '个li' + input.value;
+                if (i % 2 == 0) {
+                    li.setAttribute('class', 'list-group-item list-group-item-info');
+                } else {
+                    li.setAttribute('class', 'list-group-item');
+                }
+            }
+        };
+    }
+    </script>
+</head>
+
+<body>
+    <p>插入前面元素</p>
+    <ul class="list-group">
+    </ul>
+    <p>
+        <input type="text" name="" placeholder="可以自定义内容">
+        <button type="button" class="btn btn-info">插入li</button>
+    </p>
+</body>
+
+</html>

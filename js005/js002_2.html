@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>2.DOM节点 兄弟节点-Javascript005-首尾子节点、兄弟节点
+    </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script type="text/javascript">
+    window.onload = function() {
+        var btn = document.getElementsByTagName('button');
+        var list = document.getElementsByTagName('li')[1];
+        btn[0].onclick = function() {
+            if (list.previousElementSibling) {
+                list.previousElementSibling.innerHTML = '修改首节点OK!'
+            } else {
+                list.previousSibling.innerHTML = '修改首节点OK!'
+            }
+        };
+
+                btn[1].onclick = function() {
+            if (list.nextElementSibling) {
+                list.nextElementSibling.innerHTML = '修改尾节点OK!'
+            } else {
+                list.nextSibling.innerHTML = '修改尾节点OK!'
+            }
+        };
+    }
+    </script>
+</head>
+
+<body>
+    <p>DOM节点 兄弟节点</p>
+    <ul class="list-group">
+        <li class="list-group-item">子节点1 首节点</li>
+        <li class="list-group-item">子节点2</li>
+        <li class="list-group-item">子节点2 尾节点</li>
+    </ul>
+    <div>
+        <p>
+            <button type="button" class="btn btn-info">查看子节点2前兄弟节点</button> <code>previousSibling & previousElementSibling</code> </p>
+        <p>
+            <button type="button" class="btn btn-info">查看子节点2后兄弟节点</button> <code>nextSibling & nextElementSibling</code></p>
+    </div>
+</body>
+
+</html>
