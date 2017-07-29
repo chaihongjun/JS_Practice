@@ -21,7 +21,7 @@
 ####3. 提取行间事件
 1. https://chaihongjun.github.io/JS_Practice/js001/js003_1.html (提取onclick进JS window.onload)
 2. https://chaihongjun.github.io/JS_Practice/js001/js003_2.html (批量获取元素修改样式 getElementsByTagName 数组里逐个挑选)
-3. https://chaihongjun.github.io/JS_Practice/js001/js003_3.html (获取当前页面中所有div的个数（length)
+3. https://chaihongjun.github.io/JS_Practice/js001/js003_3.html (获取当前页面中所有div的个数(length))
 
 ####4. 循环
 1. https://chaihongjun.github.io/JS_Practice/js001/js004_1.html (while循环)
@@ -46,8 +46,8 @@
 ### 2. 基础JAVAscript
 ####1. JAVAscript组成、变量的类型、数据类型转换
 1. https://chaihongjun.github.io/JS_Practice/js002/js001_1.html (变量的类型)
-2. https://chaihongjun.github.io/JS_Practice/js002/js001_2.html (变量类型转换 显式类型转换/强制类型转换（明确写出parseFloat或paseInt告诉计算机必须转换。）)
-3. https://chaihongjun.github.io/JS_Practice/js002/js001_3.html (变变量类型转换 隐式类型转化（没有写出转换语句，计算机自己进行字符串转换成数字。）)
+2. https://chaihongjun.github.io/JS_Practice/js002/js001_2.html (变量类型转换 显式类型转换/强制类型转换(明确写出parseFloat或paseInt告诉计算机必须转换。))
+3. https://chaihongjun.github.io/JS_Practice/js002/js001_3.html (变变量类型转换 隐式类型转化(没有写出转换语句，计算机自己进行字符串转换成数字。))
 
 ####2. 作用域、闭包、父函数、子函数、命名规范
 1. https://chaihongjun.github.io/JS_Practice/js002/js002_2.html (命名规范)
