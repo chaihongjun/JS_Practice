@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta name="keywords" content="put your important keywords in here" />
+    <title>2.滚动距离-Javascript006-可视区尺寸、滚动距离
+    </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script type="text/javascript">
+    window.onload = function() {
+        var btn = document.getElementsByTagName('button')[0];
+        btn.onclick = function() {
+//       各浏览器下 scrollTop的差异 
+// IE6/7/8： 
+// 对于没有doctype声明的页面里可以使用  document.body.scrollTop 来获取 scrollTop高度 ； 
+// 对于有doctype声明的页面则可以使用 document.documentElement.scrollTop； 
+// Safari: 
+// safari 比较特别，有自己获取scrollTop的函数 ： window.pageYOffset ； 
+// Firefox: 
+// 火狐等等相对标准些的浏览器就省心多了，直接用 document.documentElement.scrollTop ； 
+// 2、获取scrollTop值 
+// 完美的获取scrollTop 赋值短语 ： 
+// var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+     alert('当前页面离顶部的滚动距离：'+document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop);
+        };
+    }
+    </script>
+</head>
+
+<body>
+    <p>滚动距离</p>
+    <p><code>var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;</code></p>
+    <div class="container">
+        <p class="text-center">
+            <button type="button" class="btn btn-info">查看滚动距离</button>
+        </p>
+    </div>
+</body>
+
+</html>
