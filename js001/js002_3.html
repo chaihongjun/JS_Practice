@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="cmn-hans">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name=renderer content=webkit>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <meta name=applicable-device content="pc,mobile">
+    <!-- some meta tags, important for SEO"-->
+    <meta name="description" content="put a short description in here" />
+    <meta 3.函数传参 参数加变量-Javasscript001-函数传参</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script type="text/javascript">
+    window.addEventListener('load', function() {
+        var btn = document.getElementsByTagName('button');
+        var input = document.getElementsByTagName('input')[0];
+        function changeWord(word) {
+            input.value = word;
+        }
+        function addTitle(title){
+                    input.title=title;
+        }
+        btn[0].addEventListener('click', function() { changeWord('两个小孩儿坐灰机') });
+        btn[1].addEventListener('click', function() { addTitle('两个小孩儿坐灰机') });
+    });
+    </script>
+</head>
+<body>
+    <p>函数传参 参数加变量</p>
+    <input type="text" name="" value="你拍一 我拍一">
+    <button type="button" class="btn btn-info">改变文字</button>
+    <button type="button" class="btn btn-info">添加title属性</button>
+</body>
+</html>
